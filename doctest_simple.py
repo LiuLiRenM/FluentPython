@@ -36,3 +36,60 @@ def my_function_another(a, b):
     :return:
     """
     return a * b
+
+
+def listcomps():
+    """
+    列表推导
+
+    >>> symbols = '$¢£¥€¤'
+    >>> codes = []
+    >>> for symbol in symbols:
+    ...     codes.append(ord(symbol))
+    ...
+    >>> codes
+    [36, 162, 163, 165, 8364, 164]
+
+    >>> symbols = '$¢£¥€¤'
+    >>> codes = [ord(symbol) for symbol in symbols]
+    >>> codes
+    [36, 162, 163, 165, 8364, 164]
+
+    >>> symbols = '$¢£¥€¤'
+    >>> beyond_ascii = [ord(s) for s in symbols if ord(s) > 127]
+    >>> beyond_ascii
+    [162, 163, 165, 8364, 164]
+    >>> beyond_ascii = list(filter(lambda c: c > 127, map(ord, symbols)))
+    >>> beyond_ascii
+    [162, 163, 165, 8364, 164]
+
+    """
+    pass
+
+
+def cartesian_product():
+    """
+    笛卡尔积
+
+    >>> colors = ['black', 'white']
+    >>> sizes = ['S', 'M', 'L']
+    >>> t_shirts = [(color, size) for color in colors for size in sizes]
+    >>> t_shirts
+    [('black', 'S'), ('black', 'M'), ('black', 'L'), ('white', 'S'), ('white', 'M'), ('white', 'L')]
+
+    >>> for color in colors:
+    ...     for size in sizes:
+    ...         print((color, size))
+    ('black', 'S')
+    ('black', 'M')
+    ('black', 'L')
+    ('white', 'S')
+    ('white', 'M')
+    ('white', 'L')
+
+    >>> t_shirts = [(color, size) for size in sizes for color in colors]
+    >>> t_shirts
+    [('black', 'S'), ('white', 'S'), ('black', 'M'), ('white', 'M'), ('black', 'L'), ('white', 'L')]
+
+    """
+    pass
