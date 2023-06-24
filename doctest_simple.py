@@ -250,4 +250,12 @@ def python_slice():
 
 if __name__ == '__main__':
     # tuple_unpacking()
-    named_tuple()
+    # named_tuple()
+
+    t = (1, 2, [30, 40])
+    print(f'1:{t}')
+    try:
+        # t被修改了 同时也抛出了异常
+        t[2] += [50, 60]
+    finally:
+        print(f'2:{t}')
