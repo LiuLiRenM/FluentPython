@@ -45,5 +45,25 @@ def dict_derivation_example():
     print(filter_country_dial)
 
 
+def unpack():
+    """
+    演示映射拆包（附带doctest的测试用例）
+
+    >>> def dump(**kwargs):
+    ...     return kwargs
+    ...
+    >>> dump(**{'x': 1}, y=2, **{'z': 3})
+    {'x': 1, 'y': 2, 'z': 3}
+    >>> {'a': 0, **{'x': 1}, 'y': 2, **{'z': 3, 'x': 4}}
+    {'a': 0, 'x': 4, 'y': 2, 'z': 3}
+    """
+
+    def dump_1(**kwargs):
+        return kwargs
+
+    print(dump_1(**{'x': 1}, y=2, **{'z': 3}))
+
+
 if __name__ == '__main__':
-    dict_derivation_example()
+    # dict_derivation_example()
+    unpack()
