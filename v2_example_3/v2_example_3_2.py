@@ -64,6 +64,31 @@ def unpack():
     print(dump_1(**{'x': 1}, y=2, **{'z': 3}))
 
 
+def merge_mapping():
+    """
+    使用|和|=进行合并映射操作（附带doctest的测试用例）
+
+    >>> d11 = {'a': 1, 'b': 2}
+    >>> d22 = {'a': 2, 'b': 4, 'c': 6}
+    >>> d11 | d22
+    {'a': 2, 'b': 4, 'c': 6}
+    >>> d11
+    {'a': 1, 'b': 2}
+    >>> d11 |= d22
+    >>> d11
+    {'a': 2, 'b': 4, 'c': 6}
+    """
+    d1 = {'a': 1, 'b': 2}
+    d2 = {'a': 2, 'b': 4, 'c': 6}
+    result = d1 | d2
+    print(d1)
+    print(d2)
+    print(result)
+    d1 |= d2
+    print(d1)
+
+
 if __name__ == '__main__':
     # dict_derivation_example()
-    unpack()
+    # unpack()
+    merge_mapping()
